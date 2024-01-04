@@ -23,3 +23,25 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+//////////////////////////////////////////////////////////////////////////////
+
+const galleryList = document.querySelector('.gallery');
+let galleryHTML = '';
+
+images.forEach((image) => {
+  galleryHTML += `
+    <li>
+      <img src="${image.url}" alt="${image.alt}" width="500" height="350">
+    </li>
+  `;
+});
+
+galleryList.insertAdjacentHTML('beforeend', galleryHTML);
+
+// listStyle = none
+galleryList.style.listStyle = 'none';
+const galleryItems = document.querySelectorAll('.gallery li');
+galleryItems.forEach((item) => {
+  item.style.listStyle = 'none';
+});
